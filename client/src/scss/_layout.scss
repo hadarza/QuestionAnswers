@@ -1,0 +1,144 @@
+/*there are the styles for the header, footer, the grid system, etc*/
+
+@import './base';
+@import './styles';
+*{
+    font-family: "Assistant-Light";
+}
+body{
+    margin: 0;
+}
+.App{
+    width:100vw;
+    height: 100vh;
+}
+.app__wrapper{
+    background-color: $background_page;
+    width:100%;
+    height: 100%;
+    @include flex;
+}
+.card-Question{
+    position: relative;
+    width:62rem;
+    height:40rem;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    @media screen and (max-width: 1200px) {
+        width:47rem;
+    }
+    @media screen and (max-width: 992px) {
+        width:40rem;
+    }
+    @media screen and (max-width: 600px) {
+        width:25rem;
+    }
+}
+.navBar{
+    @include flex;
+    justify-content: space-around;
+    margin:1rem 1.5rem;
+    position: relative;
+}
+
+/* CSS */
+.return-home{
+    top:0.2rem;
+    right:0.3rem;
+}
+.next-btn{
+    bottom:2rem;
+    left:2rem;
+}
+.check-btn{
+    bottom: 8rem;
+    width: 10rem;
+
+}
+.button-return {
+    position: absolute;
+    align-items: center;
+    background-color: $btn-return;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    }
+
+.button-return:hover,
+.button-return:focus { 
+    background-color: $btn-return-focus;
+    color: white;
+}
+
+.button-return:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+}
+
+.Answer{
+    border:none;
+    background-color: $background_page;
+    width:12rem;
+    height: 12rem;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    margin:2rem;
+    &:hover{
+        border: 1.5px solid  $hover_Answer;
+        cursor:pointer;
+        box-sizing: border-box;
+    }
+}
+.Answer:disabled{
+    background-color: $background_page !important;
+}
+
+.Answer.select{
+    border: 2px solid $correct_Answer;
+}
+
+// button disabled for check Ans
+button:disabled,
+button[disabled]{
+    background-color: $disable_btn;
+    cursor: auto;
+    border: none;
+    pointer-events: none;
+}
+
+.ans-text{
+    font-size: 1.3rem;
+    color: $color_font_Question
+}
+
+.Answers-section{
+    @include flex;
+}
+
+.Question{
+ margin: 5rem 1rem;   
+ @include flex;
+ flex-direction: column;
+}

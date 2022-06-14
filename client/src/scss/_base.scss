@@ -1,0 +1,26 @@
+/*contains all the resets, variables, mixins, and utility classes*/
+$font-family: 'Noto Sans Hebrew';
+/*colors*/
+$background_page: #EFF0F3;
+$background_div_gray: #9FB3DF;
+$button_next_Question: #031EA2;
+$color_font_Question: #595A5C;
+$correct_Answer:#3F62BB;
+$hover_Answer:#031EA2;
+$disable_btn:#BBC2D1;
+$btn-return: #0A66C2;
+$btn-return-focus: #16437E;
+
+@font-face {
+    font-family: "Assistant-Light";
+    src: local("Assistant-Light"),
+     url("../fonts/Assistant-Light.ttf") format("truetype");
+    font-weight: bold;
+}
+
+
+@mixin flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
