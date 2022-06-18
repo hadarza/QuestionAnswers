@@ -1,11 +1,11 @@
 import React from 'react'
 import "../scss/app.scss"
-import HebetNavBar from '../HebetNavBar/HebetNavBar'
-const AppWrap = (Component, idName,Question) => function HOC() {
+import HebetNavBar from '../components/HebetNavBar/HebetNavBar'
+const AppWrap = (Component) => function HOC() {
   return (
-    <div id={idName} className={`app__wrapper`}>
+    <div className="app__wrapper">
       <div className='card-Question'>
-        <HebetNavBar title={Question}/>
+{/*        <HebetNavBar title={Question}/>*/}
         <Component/>
       </div>
     </div>

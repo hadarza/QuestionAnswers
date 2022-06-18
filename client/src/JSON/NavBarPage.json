@@ -1,0 +1,30 @@
+[{
+    "name":"שאלות נכון/לא נכון",
+    "id":"0",
+    "path":"YesNo"
+
+},{
+    "name":"שאלות אמריקאיות",
+    "id":"1",
+    "path":"AmericanQuestions"
+},{
+    "name":"שאלות רב ברירתיות",
+    "id":"2",
+    "path":"MultiplyQuestions"
+
+},{
+    "name":"סרטון עם שאלות קופצות",
+    "id":"3",
+    "path":"Video"
+
+},{
+    "name":"אקורדיון",
+    "id":"4",
+    "path":"Accordion"
+},{
+    "name":"כרטיסיות מסתובבות",
+    "id":"4",
+    "path":"FlipCard"
+
+}
+]

@@ -1,0 +1,19 @@
+[
+    {
+    "title":"באיזה שנה נוסדה יחידת הבט?",
+    "indexQuestion":0,
+    "Answers":["2005","2001"],
+    "correctAns":"2001"
+    }, {
+        "title":"כמה חיילים ואזרחים יש ביחידה?",
+        "indexQuestion": 1,
+        "Answers":["50","60"],
+        "correctAns":"60"
+    },
+    {
+        "title":"מהי יחידת הבט?",
+        "indexQuestion":3,
+        "Answers":["יחידת הסרטה","יחידת דובר צהל"],
+        "correctAns":"יחידת הסרטה"
+    }
+]
