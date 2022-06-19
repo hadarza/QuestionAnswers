@@ -3,6 +3,7 @@ import React,{useEffect,useRef,useState} from 'react'
 import QYesNo from './components/Question/QYesNo';
 import Video from './components/Video/Video';
 import NavBarPage from './components/NavBar/NavBarPage'
+import MultiplyQuestion from './components/MultiplyAnswerQuestion/MultiplyQuestion'
 import Accordion from './components/Accordion/Accordion';
 import Card from './components/Cards/Card';
 import FlipCard from './components/FlipCard/FlipCard';
@@ -32,6 +33,7 @@ function App() {
     <div className="App">
       <NavBarPage/>
       <QYesNo/>
+      <MultiplyQuestion/>
       <Accordion/>
       <Video/>
       <Card/>

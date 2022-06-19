@@ -545,3 +545,23 @@ body {
   position: absolute;
   top:8rem;
 }
+
+/*MultiplyAnswer*/
+
+.MultiplyAnswer{
+  width: 40rem;
+  height:3rem;
+  border-radius: 15px;
+  border: none;
+  &:hover{
+    box-sizing:content-box;
+    border:1px solid black;
+  }
+  @include flex;
+  justify-content:flex-start;
+
+
+  .ans-text{
+    text-align: right;
+  }
+}
