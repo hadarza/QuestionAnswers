@@ -10,12 +10,12 @@ const Card = () => {
       setcurrentIndex(index);
     }
   return (
-   <>
+   <div id="Card">
    <h1>חוות דעת</h1>
    {Testmonials.slice(currentIndex,currentIndex+1).map((testmonial)=>(
     <>
      <div className='app__testmonial-item'>
-     <img src={images.logo} alt="xx"/>
+     <img src={images.logo} alt="imageLogo"/>
         <div className='app__testmonial-content'>
             <p className='bold-text feedback'>{testmonial.feedback}</p>
         <div>
@@ -35,7 +35,7 @@ const Card = () => {
      </div>
      </>
    ))}
-    </>
+    </div>
   )
 }
 

@@ -9,6 +9,9 @@
 body{
     margin: 0;
 }
+html{
+  scroll-behavior : smooth;
+} 
 .App{
     width:100%;
     height: 100%;
@@ -49,6 +52,10 @@ body{
         width:22rem;
         height:40rem;
     }
+}
+
+#YesNo{
+  padding: 19rem 31rem;
 }
 .navBar{
     @include flex;
@@ -162,7 +169,7 @@ button[disabled]{
 }
 
 .Question{
- margin: 5rem 1rem;   
+ padding: 10rem 20rem;   
  @include flex;
  flex-direction: column;
 }
@@ -227,7 +234,7 @@ button[disabled]{
  
   
   .navbar-content{
-    padding: 1.5rem 0.2rem;
+    padding: 0.8rem 0.2rem;
   }
 
 
@@ -303,6 +310,12 @@ button[disabled]{
             height:auto;
         }
     }
+}
+
+#Card{
+  @include flex;
+  flex-direction: column;
+  padding: 4rem 13rem;
 }
 
 
@@ -474,4 +487,61 @@ body {
   .card:nth-child(even):hover & {
     transform: rotateY(0deg);
   }
+}
+#Video{
+  padding: 3rem 12rem;
+}
+#Accordion{
+  padding: 18rem 29rem;
+}
+
+/*feedback-container*/
+.feedback-container{
+  width:30rem;
+  height:25rem;
+  background-color: white;
+  position: absolute;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.feedback-div{
+  @include flex;
+  height:60%;
+  position: relative;
+  flex-direction: column;
+}
+.visibleAll{
+  opacity: 1;
+}
+.HalfVisible{
+  opacity: 0.3;
+}
+
+.icon-img{
+  width:3.5rem;
+  height:3.5rem;
+  padding:1rem;
+  box-sizing: content-box;
+  @include flex;
+
+  &:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.emotions-div{
+  @include flex;
+}
+
+.btn-feedback{
+  position: relative !important;
+  top: 4rem !important;
+}
+
+
+.div-absolute{
+  position: absolute;
+  top:8rem;
 }

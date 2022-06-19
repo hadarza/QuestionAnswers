@@ -2,7 +2,7 @@ import { useState,useRef } from 'react'
 import { BiCheck } from 'react-icons/bi'
 import {RiCloseFill} from 'react-icons/ri'
 import { useSelector } from 'react-redux';
-import { getSelectAnswer, getShowAnswer } from '../Redux/features/Questions/QuestionSlice';
+import { getSelectAnswer, getShowAnswer } from '../../Redux/features/Questions/QuestionSlice';
 const Answer = ({textAns,rightAns,currentAnswer,funcOnClick,disabled}) => {
 
   const buttonRef = useRef(null);

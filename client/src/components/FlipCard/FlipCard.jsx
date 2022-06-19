@@ -2,8 +2,8 @@ import React from 'react'
 import AppWrap from '../../Wrapper/AppWrap'
 const FlipCard = () => {
   return (
-    <>
-    <h1>דוגמה לקלף</h1>
+  <>
+    <h1 id="FlipCard">דוגמה לקלף</h1>
    <a className="card" href="#!">
     <div className="front">
       <p>זה קלף...  הפוך אותי</p>

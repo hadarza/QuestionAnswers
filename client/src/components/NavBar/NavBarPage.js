@@ -5,6 +5,7 @@ import {TbBoxMultiple2} from 'react-icons/tb'
 import {BiMoviePlay} from 'react-icons/bi'
 import {GiAccordion} from 'react-icons/gi'
 import {CgCardSpades} from 'react-icons/cg'
+import {AiOutlineIdcard} from 'react-icons/ai'
 import { motion } from "framer-motion"
 const NavBarPage = () => {
     const icons = [
@@ -12,7 +13,8 @@ const NavBarPage = () => {
         TbBoxMultiple2,
         BiMoviePlay,
         GiAccordion,
-        CgCardSpades
+        CgCardSpades,
+        AiOutlineIdcard
     ];
   return (
 

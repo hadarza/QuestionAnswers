@@ -1,39 +1,48 @@
-import React,{useState,useEffect} from 'react'
-import Answer from '../../Answers/Answer'
+import React,{useState} from 'react'
 import AppWrap from '../../Wrapper/AppWrap'
 import { useSelector,useDispatch } from 'react-redux';
-import { getSelectAnswer, setSelectAnswer, setShowAnswer } from '../../Redux/features/Questions/QuestionSlice';
+import {getShowAnswer, setShowAnswer,getindexQuestion,setindexQuestion,setDisabled,setCantCheck, getvisibleFeedback,setvisibleFeedback, getCantCheck} from '../../Redux/features/Questions/QuestionSlice';
 import Questions from '../../AnswersQuestion.json'
+import FinishMessage from './FinishMessage';
+import QuestionAnswerContainer from '../../components/Question/QuestionAnswerContainer'
+
 const QYesNo = () => {
-    const [showAns, setshowAnswer] = useState(false)
-    const [isDisabled, setDisabled] = useState(false);
-    const [CantCheck,setCantCheck] = useState(true)
-    const [indexQuestion,setindexQuestion] = useState(0);
+    const CantCheck = useSelector(getCantCheck)
+    const visibleFeedback = useSelector(getvisibleFeedback) //FIX HERE NOT EXIST 
     const MaxQuestions = 3;
     const dispatch = useDispatch();
+    const showAns = useSelector(getShowAnswer)
+    const indexQuestion = useSelector(getindexQuestion);
 
-    const [currentAnswer, setcurrentAnswer] = useState("")
-    const setAns = (currentAns)=>{
-        setcurrentAnswer(currentAns)
-        dispatch(setSelectAnswer(currentAns))
-        setCantCheck(false);
-    }
     // check if the user is correct
     const checkAns = ()=>{
-      setshowAnswer(true)
-      dispatch(setShowAnswer(true))
       //make all buttons to be disabled
-      setDisabled(true);
-      setCantCheck(true);
+      dispatch(setDisabled(true));
+      dispatch(setCantCheck(true));
+      dispatch(setShowAnswer(true))
+    }
+    const Finish = (e)=>{
+        // if true - visible feedback
+        dispatch(setvisibleFeedback(true));
+        //check disabled btn???
+        if(e.currentTarget != null)
+          e.currentTarget.style.disabled = true;
+        const AllAnswers = Array.from(document.querySelectorAll('.icon-img'));
+        AllAnswers.forEach(element => {
+          if(element.classList.contains("visibleAll")){
+           console.log(element)
+            element.classList.remove("visibleAll");
+            element.classList.add("HalfVisible");
+          }});
+   
     }
 
     const NextQuestion = () =>{
       // disable to check answer
-      setshowAnswer(false)
-      setDisabled(false);
-      setCantCheck(true);
+      dispatch(setDisabled(false));
+      dispatch(setCantCheck(true));
       dispatch(setShowAnswer(false))
-      setindexQuestion(indexQuestion+1);
+      dispatch(setindexQuestion(indexQuestion+1));
 
       const AllAnswers = Array.from(document.querySelectorAll('.Answer'));
       //hide selected Answer
@@ -41,22 +50,14 @@ const QYesNo = () => {
         if(element.classList.contains("select")) element.classList.remove('select'); 
       });
     }
+    
   return (
     <div id="YesNo" className='Question Question-yesNo'>
-      {Questions.slice(indexQuestion,indexQuestion+1).map((question)=>(
-        <>
-          <h1>{question.title}</h1>
-          <div className='Answers-section'>
-            {Questions[indexQuestion].Answers.map((answer)=>(
-              <Answer textAns={answer} rightAns = {question.correctAns} currentAnswer={answer} funcOnClick={setAns} disabled={isDisabled}/>
-            ))}
-        </div>
-        </>
-      ))}
-
+        <QuestionAnswerContainer Questions={Questions}/>
+        <FinishMessage title ="איך היו השאלות? נהנת?" visible={visibleFeedback}/> 
         <button className='button-return check-btn' onClick={checkAns} disabled={CantCheck}>בדוק שאלה</button>
         {(indexQuestion < MaxQuestions - 1 && showAns) && <button className='button-return next-btn' onClick={NextQuestion}>עבור לשאלה הבאה</button>}
-            
+        {(indexQuestion == MaxQuestions - 1 && showAns) && <button className='button-return next-btn' disabled={false} onClick={(e)=>{Finish(e)}}>לסיום</button>}
     </div>
   )
 }

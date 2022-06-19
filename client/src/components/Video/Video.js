@@ -1,18 +1,20 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useRef} from 'react'
 import Clouds from '../../assets/videos/Clouds.mp4'
 import AppWrap from '../../Wrapper/AppWrap'
-
+import PopUpQuestions from '../Video/PopUpQuestions/PopUpQuestions'
 const Video = () => {
-    useEffect(() => {
-     setTimeout(() => {
+  const videoRef = useRef(null);
+
+    const StartTimer = () =>{
+      setTimeout(() => {
         // after 10 sec stop video 
-     }, 10000);
-    }, [])
-    
+        videoRef.current.pause();
+      }, 10000);
+    }
   return (
     <div id="Video">
         <h1>סרטון עם שאלות קופצות</h1>
-        <video width="700" height="500" controls src={Clouds}/>
+        <video ref={videoRef} width="700" height="500" controls src={Clouds} onPlay={StartTimer}/>
     </div>
   
   )

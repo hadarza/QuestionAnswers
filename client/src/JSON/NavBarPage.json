@@ -8,22 +8,23 @@
     "id":"1",
     "path":"AmericanQuestions"
 },{
-    "name":"שאלות רב ברירתיות",
-    "id":"2",
-    "path":"MultiplyQuestions"
-
-},{
     "name":"סרטון עם שאלות קופצות",
-    "id":"3",
+    "id":"2",
     "path":"Video"
 
 },{
     "name":"אקורדיון",
-    "id":"4",
+    "id":"3",
     "path":"Accordion"
+},
+{
+    "name":"כרטיסיות מעבר ",
+    "id":"4",
+    "path":"Card"
+
 },{
     "name":"כרטיסיות מסתובבות",
-    "id":"4",
+    "id":"5",
     "path":"FlipCard"
 
 }
